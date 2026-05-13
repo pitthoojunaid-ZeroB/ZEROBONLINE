@@ -4,8 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Customer Feedback Form</title>
+<title>ZeroB Customer Feedback</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+
 body{
   background:
     radial-gradient(circle at top left,#dcebff 0%,transparent 25%),
@@ -31,7 +34,7 @@ body{
   position:relative; overflow:hidden;
 }
 .brand-header::before{
-  content:''; position:absolute; left:-68px; bottom:-60px;
+  content:''; position:absolute; left:-60px; bottom:-60px;
   width:220px; height:220px; border-radius:50%;
   background:radial-gradient(circle,rgba(0,150,255,0.07),transparent 70%);
   pointer-events:none;
@@ -156,7 +159,7 @@ input:focus{
   <!-- BRAND HEADER -->
   <div class="brand-header">
     <div class="brand-svg-wrap">
-      <svg viewBox="0 0 400 114" width="110%" style="max-width:390px;display:block;" role="img" aria-label="ZeroB Pure Water Solutions logo">
+      <svg viewBox="0 0 400 114" width="100%" style="max-width:390px;display:block;" role="img" aria-label="ZeroB Pure Water Solutions logo">
         <defs>
           <linearGradient id="dM" x1="0.3" y1="0" x2="0.7" y2="1">
             <stop offset="0%"   stop-color="#72cff5"/>
@@ -170,13 +173,13 @@ input:focus{
         </defs>
 
         <!-- ZERO wordmark, baseline y=82 -->
-        <text x="10" y="82"
+        <text x="4" y="82"
           font-family="'Poppins','Arial Black',Arial,sans-serif"
           font-size="88" font-weight="800"
-          fill="#1a6fc4" letter-spacing="8px">ZERO</text>
+          fill="#1a6fc4" letter-spacing="-1">ZERO</text>
 
-        <!-- Drop: 20% size, bottom of gap between O and B
-             centre x=255, bottom y=109, top y=59, width=28 -->
+        <!-- Drop: 50% size, bottom of gap between O and B
+             centre x=268, bottom y=109, top y=59, width=28 -->
         <path d="M268 59 C268 59 254 75 254 90 C254 100 260 109 268 109 C276 109 282 100 282 90 C282 75 268 59 268 59 Z"
           fill="url(#dM)"/>
         <path d="M268 59 C268 59 254 75 254 90 C254 100 260 109 268 109 C276 109 282 100 282 90 C282 75 268 59 268 59 Z"
@@ -205,7 +208,7 @@ input:focus{
       </svg>
     </div>
     <div class="brand-divider"><div class="brand-divider-dot"></div></div>
-    <div class="page-title">Customer Feedback Form</div>
+    <div class="page-title">ZeroB Customer Feedback</div>
   </div>
 
   <!-- FORM -->
@@ -324,7 +327,7 @@ input:focus{
 
     <div class="store-buttons">
       <a href="https://play.google.com/store/apps/details?id=com.ion.zero_b&pcampaignid=web_share" target="_blank" rel="noopener">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Play Store">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play">
       </a>
       <a href="https://apps.apple.com/us/app/zerob-service-app/id6752483224" target="_blank" rel="noopener">
         <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store">
