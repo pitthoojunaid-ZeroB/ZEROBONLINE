@@ -8,7 +8,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+    const FORM_ID = "zerob_feedback_last_submit";
+    const DAYS_LIMIT = 7;
+
+    // Check previous submission
+    const lastSubmission = localStorage.getItem(FORM_ID);
+
+    if (lastSubmission) {
+
+        const lastDate = new Date(lastSubmission);
+        const currentDate = new Date();
+
+        const diffTime = currentDate - lastDate;
+        const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+        if (diffDays < DAYS_LIMIT) {
+
+            // Hide form
+            const form = document.querySelector("form");
+
+            if (form) {
+                form.style.display = "none";
+            }
+
+            // Show restriction message
+            const msg = document.createElement("div");
+            msg.innerHTML = `
+                <div style="
+                    max-width:600px;
+                    margin:50px auto;
+                    padding:30px;
+                    text-align:center;
+                    background:#ffffff;
+                    border-radius:15px;
+                    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+                    font-family:Arial,sans-serif;
+                ">
+                    <h2 style="color:#0b5ed7;">Feedback Already Submitted</h2>
+                    <p style="font-size:16px;color:#555;">
+                        You can submit feedback again after 7 days.
+                    </p>
+                </div>
+            `;
+            document.body.appendChild(msg);
+        }
+    }
+
+    // Save submission date when form is submitted
+    const form = document.querySelector("form");
+
+    if (form) {
+        form.addEventListener("submit", function () {
+            localStorage.setItem(FORM_ID, new Date().toISOString());
+        });
+    }
 body{
   background:
     radial-gradient(circle at top left,#dcebff 0%,transparent 25%),
